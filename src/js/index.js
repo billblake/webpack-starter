@@ -4,6 +4,7 @@ import '../css/style.css';
 import '../sass/style.scss';
 // eslint-disable-next-line id-length
 import $ from 'jquery';
+import { Student } from '../ts/student.ts';
 // eslint-disable-next-line id-length
 import _ from 'lodash';
 
@@ -11,10 +12,14 @@ import _ from 'lodash';
 const template = require('../templates/userTable.handlebars');
 
 $(document).ready(() => {
-    // Lodash example usage
-    // eslint-disable-next-line no-unused-vars,array-element-newline
-    const lodashExample = _.join(['Hello', 'World'], ' ');
+    const student = new Student('Robbie', 'God', 'Fowler');
 
+    // Lodash example usage
+    // eslint-disable-next-line array-element-newline
+    const lodashExample = _.join(['Hello', student.fullName], ' ');
+
+    // eslint-disable-next-line no-console
+    console.log(lodashExample);
 
     // Jquery
     $('#save').click(() => {
